@@ -1,0 +1,45 @@
+public class PaySlipnipatpat {
+	public static void main(String[] args) {
+		
+		String Employee_Name = "Magdalena Leones";
+		double Monthly_Salary = 35000;
+		double Daily_Rate = 1666.67;
+		double Working_Days = 21;
+		double Leave_Credits_Left = 03;
+		double Minute_Late = 30;
+		double SSS_Contribution = 0.045;
+		double Pagibig_Contribution = 200;
+		double Withholding_Tax = 0.10;
+		
+		
+	
+		
+		
+		//Computation of Deductions
+		double per_Minute = Daily_Rate / (8 * 60);
+	    double Leave_Deduction = Daily_Rate * Leave_Credits_Left;
+		double Late_Deduction = per_Minute * Minute_Late;
+		double Gross_Pay = Monthly_Salary - Leave_Deduction - Late_Deduction;
+		double SSS_Deduction = Gross_Pay * SSS_Contribution;
+		double Withholdings_Tax = Gross_Pay * Withholding_Tax;
+		double Total_Deduction = SSS_Deduction + Pagibig_Contribution + Withholdings_Tax;
+	    double Net_Pay = Gross_Pay - Total_Deduction;
+		
+		
+		
+		
+		System.out.println("–––––––––––––––––––––––––––––––––––––––––––––––");
+		System.out.println("Employee Name:                " + Employee_Name);
+		System.out.println("Her Monthly Salary:           " + Monthly_Salary);
+		System.out.println("Gross Pay:                    " + Gross_Pay);
+		System.out.println("–––––––––––––––––––––––––––––––––––––––––––––––");
+		System.out.println (" Deduction                       Amount");
+		System.out.println("Withholding Tax:              " + Withholdings_Tax);
+		System.out.println("SSS Deduction:                " + SSS_Deduction);
+		System.out.println("Total Deduction:              " + Total_Deduction);
+		System.out.println("–––––––––––––––––––––––––––––––––––––––––––––––");
+		System.out.println("Net Pay:                      " + Net_Pay);
+		System.out.println("–––––––––––––––––––––––––––––––––––––––––––––––");
+		
+	}
+}
